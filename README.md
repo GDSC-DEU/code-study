@@ -28,4 +28,10 @@
 ## :busts_in_silhouette: 참여자
 
 - [김동영](https://github.com/pers0n4) [Maintainer]
-- TBD...
+- [김남주](https://github.com/cmsong111)
+- [남유정](https://github.com/uzhjd)
+- [송재백](https://github.com/thdwoqor)
+- [원지윤](https://github.com/sudhdkso)
+- [진희륜](https://github.com/SerenityS)
+- [최정혜](https://github.com/jeonghye-choi)
+- [허수민](https://github.com/heosumin518)

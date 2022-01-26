@@ -12,7 +12,7 @@ int solution(vector<int> priorities, int location) {
 	for (int i = 0; i < priorities.size(); i++)
 		q.push(priorities[i]);
 
-    //복사한 순서를 오름차순으로 정렬
+    //복사한 순서를 내림차순으로 정렬
 	sort(v.begin(), v.end(), greater<>());
 
 	while (q.size() > 0) { 

@@ -1,0 +1,36 @@
+#include <string>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> progresses, vector<int> speeds) {
+    vector<int> answer;
+    queue<int> day;
+    int d, com, acc;
+    
+    for(int i = 0; i < progresses.size(); i++){
+        d = 0;
+        
+        while(progresses[i] < 100){
+            progresses[i] += speeds[i];
+            d++;
+        }
+        
+        day.push(d);
+    }
+    
+    while(!day.empty()) {
+        com = day.front();
+        day.pop();
+        acc = 1;
+        
+        while((!day.empty()) && (day.front() <= com)) {
+                day.pop();
+                acc++;
+            }
+        answer.push_back(acc);
+    }
+    
+    return answer;
+}

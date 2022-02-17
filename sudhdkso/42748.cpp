@@ -20,6 +20,5 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
         answer.push_back(a[idx]);
     }
 
-
     return answer;
 }

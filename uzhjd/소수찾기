@@ -1,0 +1,50 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include <iostream>
+
+using namespace std;
+
+bool isPrime(int n) {
+    if(n < 2) return false;
+    
+    for(int i = 2; i * i <= n; i++) {
+        if(n % i == 0) return false;
+    }
+    
+    return true;
+}
+
+int solution(string numbers) {
+    int answer = 0;
+    vector<char> n;
+    vector<int> num;
+    
+    for (int i = 0; i < numbers.size(); i++) { 
+        n.push_back(numbers[i]);
+    }
+    sort(n.begin(), n.end());
+
+    do {
+        string temp = "";
+        
+        for (int i = 0; i < n.size(); i++) {
+            temp.push_back(n[i]);
+            // cout << n[i];
+            num.push_back(stoi(temp));
+            // cout << " ";
+        }
+        // cout << endl;
+    } while (next_permutation(n.begin(), n.end()));
+
+    sort(num.begin(), num.end());
+    num.erase(unique(num.begin(), num.end()), num.end());
+    
+    for (int i = 0; i < num.size(); i++) {
+        if (isPrime(num[i]))
+            answer++;
+    }
+
+    return answer;
+}

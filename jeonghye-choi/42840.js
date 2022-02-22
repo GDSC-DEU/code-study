@@ -9,20 +9,18 @@ function solution(answers) {
   let count = [0, 0, 0];
   let result = [];
 
-  const student1 = [1, 2, 3, 4, 5]; // 5개 반복
-  const student2 = [2, 1, 2, 3, 2, 4, 2, 5]; //8개 반복
-  const student3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]; // 10개 반복
+  const students = [
+    [1, 2, 3, 4, 5],
+    [2, 1, 2, 3, 2, 4, 2, 5],
+    [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
+  ];
 
-  answers.forEach((answer, index) => {
-    if (student1[index % 5] === answer) {
-      count[0] += 1;
-    }
-    if (student2[index % 8] === answer) {
-      count[1] += 1;
-    }
-    if (student3[index % 10] === answer) {
-      count[2] += 1;
-    }
+  answers.forEach((answer, answerIndex) => {
+    students.forEach((student, studentIndex) => {
+      if (student[answerIndex % student.length] === answer) {
+        count[studentIndex] += 1;
+      }
+    });
   });
 
   var max = 0;
